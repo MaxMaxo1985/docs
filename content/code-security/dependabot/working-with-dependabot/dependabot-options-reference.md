@@ -171,7 +171,7 @@ Supported by: `bundler`, `composer`, `mix`, `maven`, `npm`, and `pip`.
 
 ## `cooldown` {% octicon "versions" aria-label="Version updates" height="24" %}
 
-Defines a **cooldown period** for dependency updates, allowing updates to be delayed for a configurable number of days. The `coooldown` option is only available for _version_ updates, not _security_ updates.
+Defines a **cooldown period** for dependency updates, allowing updates to be delayed for a configurable number of days. The `cooldown` option is only available for _version_ updates, not _security_ updates.
 
 This feature enables users to customize how often {% data variables.product.prodname_dependabot %} generates new version updates, offering greater control over update frequency. For examples, see [AUTOTITLE](/code-security/dependabot/dependabot-version-updates/optimizing-pr-creation-version-updates#setting-up-a-cooldown-period-for-dependency-updates).
 
@@ -205,6 +205,9 @@ The table below shows the package managers for which SemVer is supported.
 
 | Package manager        | SemVer supported |
 |-----------------------|------------------|
+| {% ifversion dependabot-bazel-support %} |
+| Bazel               | {% octicon "x" aria-label="Not supported" %}              |
+| {% endif %} |
 | Bundler               | {% octicon "check" aria-label="Supported" %}              |
 | Bun                   | {% octicon "check" aria-label="Supported" %}              |
 | Cargo                 | {% octicon "check" aria-label="Supported" %}              |
@@ -475,6 +478,9 @@ When `open-pull-requests-limit` is defined:
 
 Package manager | YAML value      | Supported versions |
 ---------------|------------------|:------------------:|
+| {% ifversion dependabot-bazel-support %} |
+| Bazel         | `bazel`          | v7, v8, v9               |
+| {% endif %} |
 | {% ifversion dependabot-bun-support %} |
 | Bun | `bun`         | >=v1.2.5              |
 | {% endif %} |
